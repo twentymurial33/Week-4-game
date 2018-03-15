@@ -1,0 +1,19 @@
+h2{
+    background-color:lightcoral;
+     
+}
+
+ p{
+        font-weight:bold;
+    }
+
+    
+.container{
+    background-color: aqua;
+}
+
+   #randomNumber{
+       margin-left: 70px;
+       font-weight:bold;
+       color:blue;
+   }
