@@ -1,65 +1,50 @@
 $(document).ready(function(){
 
 
-    var currentScore=0;
+    var yourScore=0;
     var winCount=0;
     var lossCount=0;
     var targetNumber=69;
     var counter=0;
+    var crystal1RandomNumber = Math.floor(Math.random()*12+1);
+    var crystal2RandomNumber = Math.floor(Math.random()*12+1);
+    var crystal3RandomNumber = Math.floor(Math.random()*12+1);
+    var crystal4RandomNumber = Math.floor(Math.random()*12+1);
 
     var randomNumber=Math.floor(Math.random()*targetNumber)+targetNumber;
     console.log (randomNumber);
     $("#radomNumber").text(randomNumber);
     
+    $('.crystal1').on('click',function(){
+       yourScore=yourScore+crystal1RandomNumber
+        $("#yourScore").html(yourScore);
+    }); if (yourScore==targetNumber){
+        win++;
+    } 
+    
+    $('.crystal2').on('click',function(){
+        yourScore=yourScore+crystal2RandomNumber
+         $("#yourScore").html(yourScore);
+     }); if (yourScore==targetNumber){
+        win++;
+    } 
 
-    var getRandom=function(min,max){
-        return Math.floor(Math.random()*(max-min+1))+ min; 
-    }
 
-    $("#yourScore").html(yourScore);
-    $("#targetNumber").html(targetNumber);
+     $('.crystal3').on('click',function(){
+        yourScore=yourScore+crystal3RandomNumber
+         $("#yourScore").html(yourScore);
+     });if (yourScore==targetNumber){
+        win++;
+    } 
 
-    function startGame(){
-        var crystal1=0;
-        var crystal2=0;
-        var crystal3=0;
-        var crystal4=0;
-
+     $('.crystal4').on('click',function(){
+        yourScore=yourScore+crystal4RandomNumber
+         $("#yourScore").html(yourScore);
+     });if (yourScore==targetNumber){
+        win++;
+    } 
+    
+    $("#targetNumber").html(randomNumber);
         
-         console.log("crystal1: " +crystal1.value+ "| crystal2: " + crystal2.value + "|crystal3: "+crystal3.value + "|crystal4: "+crystal4.value);
-
-         startGame();
-
-        $("#crystals").click(function() {
-            console.log(crystals);
-            console.log(targetScore);
-            
-
-  
-            $("#numberWins").text(wins);
-            $("#numberLosses").text(losses);
-            
-            function reset() {
-                random = Math.floor(Math.random()*102+19);
-                console.log(random);
-            $("#numberToGet").text(random);
-            var crystal1 = Math.floor(Math.random()*12+1);
-            var crystal2= Math.floor(Math.random()*12+1);
-            var crystal3= Math.floor(Math.random()*12+1);
-            var crystal4= Math.floor(Math.random()*12+1);
-            userTotal = 0;
-            $("#yourScore").text(userTotal);
-        }
-        
-        function winner() {
-            alert("You Won!!");
-            wins++;
-            $("#numberWins").text(wins);
-            reset();
-        
-    }
-        });
-    };
-
  
 })
